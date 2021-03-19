@@ -42,6 +42,7 @@
       thisBook.getElements();
       thisBook.render();
       thisBook.initActions();
+
     }
 
     initData() {
@@ -133,7 +134,7 @@
         for (const filter of filters){
           //console.log(filters);
 
-          if (!book.details[false]){
+          if (!book.details[filter]){
             shouldBeHidden = true;
             break;
           }
@@ -145,15 +146,15 @@
         //wystarczy znaleźć element o tejże klasie i data-id równym właśnie id książki.
         ////.book__image[data-id="id-of-the-book-here"]
         ////tak jak tutaj const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
-        const activeImage = document.querySelectorAll(`.book__image`);
+        const activeImage = document.querySelector('.book__image[data-id="'+book.id+'"]');
 
         console.log(activeImage);
 
         if (shouldBeHidden){
-          activeImage.classList.add(classNames.books.classHidden);
+          activeImage.classList.add('hidden');
 
         } else {
-          activeImage.classList.remove(classNames.books.classHidden);
+          activeImage.classList.remove('hidden');
         }
       }
     }
