@@ -140,12 +140,6 @@
           }
         }
 
-        /////należy znaleźć element .book__image danej książki i nadać mu klasę hidden///
-        /////book__image zawsze posiada atrybut data-id o wartości równej właśnie id książki.
-        ///Aby znaleźć więc book__image odpowiadające danej książce,
-        //wystarczy znaleźć element o tejże klasie i data-id równym właśnie id książki.
-        ////.book__image[data-id="id-of-the-book-here"]
-        ////tak jak tutaj const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
         const activeImage = document.querySelector('.book__image[data-id="'+book.id+'"]');
 
         console.log(activeImage);
